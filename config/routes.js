@@ -4,7 +4,7 @@ const routes = express.Router()
 const path = require('path')
 
 routes.get('/', function (req, res) {
-  res.send('Teste')
+  res.send('Seja Bem Vindo')
 })
 
 routes.get('/informacoes', function (req, res) {
