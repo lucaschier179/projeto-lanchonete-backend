@@ -4,4 +4,11 @@ const routes = require('./config/routes')
 
 app.use(routes)
 
-app.listen(3000)
+const PORT = "3000"
+const IP = "192.168.197.230"
+
+// app.set("PORT",PORT)
+
+app.listen(PORT,IP, () => {
+  console.log("Servidor Ligado em: " + IP + ":" + PORT)
+});
