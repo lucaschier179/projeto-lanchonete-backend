@@ -10,15 +10,12 @@ db.serialize(function() {
         email VARCHAR(30) NOT NULL, 
         senha VARCHAR(20) NOT NULL,
         cpf VARCHAR(11) NOT NULL,
-        endereco VARCHAR(45) NOT NULL);
-    `);
-   
+        endereco VARCHAR(45) NOT NULL
+    );`
+    );
+
     // Insert data into the table
-    db.exec(`INSERT INTO Foo (name) VALUES ('bar')`);
-   
-    // Query data from the table
-    // db.each("SELECT id, name FROM Foo", function(err, row) {
-    //   console.log(row.id + ": " + row.name);
-    // });
-   });
+    //db.exec(`INSERT INTO Cadastro (name) VALUES ('')`);
+
+    });
 db.close();
