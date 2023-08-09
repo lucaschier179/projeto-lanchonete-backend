@@ -14,7 +14,7 @@ db.serialize(function() {
     `);
    
     // Insert data into the table
-    // db.run("INSERT INTO Foo (name) VALUES ('bar')");
+    db.exec(`INSERT INTO Foo (name) VALUES ('bar')`);
    
     // Query data from the table
     // db.each("SELECT id, name FROM Foo", function(err, row) {
