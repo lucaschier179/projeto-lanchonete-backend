@@ -2,9 +2,9 @@
   "name": "projeto-lanchonete",
   "version": "1.0.0",
   "description": "",
-  "main": "Api.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon Api.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
