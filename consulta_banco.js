@@ -7,4 +7,4 @@ async function listar(){
   await db.end()
 }
 
-listar()
+console.log(listar())
