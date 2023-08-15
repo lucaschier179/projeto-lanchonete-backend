@@ -1,11 +1,11 @@
--- TABELAS - BANCO DE DADOS --
+/*
 CREATE TABLE IF NOT EXISTS cadastro_cliente (
 	id_cliente SERIAL PRIMARY KEY,
 	nome_cliente VARCHAR(60)NOT NULL,
 	email_cliente VARCHAR(30) NOT NULL, 
 	senha_cliente VARCHAR(20) NOT NULL,
 	cpf_cliente VARCHAR(11) NOT NULL,
-	endereco_cliente VARCHAR(45) NOT NULL
+	endereco_cliente VARCHAR(45) NOT NULL,
 	idade_cliente INTEGER NOT NULL
 );
 
@@ -49,8 +49,7 @@ CREATE TABLE IF NOT EXISTS comanda (
 	FOREIGN KEY (produto_id__comanda) REFERENCES cardapio(id_cardapio)
 );
 
--- INSERIR DADOS - BANCO DE DADOS --
-INSERT INTO cadastro_cliente (
+INSERT INTO cadastro_cliente ( FEITO
 	id_cliente,
 	nome_cliente,
 	email_cliente,
@@ -59,9 +58,8 @@ INSERT INTO cadastro_cliente (
 	endereco_cliente,
 	idade_cliente
 )
-VALUES (1,'','','','','','');
 
-INSERT INTO cadastro_colaborador (
+INSERT INTO cadastro_colaborador ( FEITO
 	id_colaborador,
 	nome_colaborador,
 	email_colaborador,
@@ -70,7 +68,6 @@ INSERT INTO cadastro_colaborador (
 	endereco_colaborador,
 	idade_colaborador
 )
-VALUES (1,'','','','','','');
 
 INSERT INTO produto (
 	id_produto,
@@ -80,25 +77,22 @@ INSERT INTO produto (
 	validade_produto,
 	codigo_barra_produto
 )
-VALUES (1,'','',2,00/00/0000,'');
 
 INSERT INTO estoque (
 	id_estoque,
 	produto_id_estoque,
 	quantidade_estoque
 )
-VALUES (1,2,3);
 
 INSERT INTO cardapio (
 	id_cardapio,
 	produto_id_cardapio,
 	valor_produto_cardapio
 )
-VALUES (1,2,00.00);
 
 INSERT INTO comanda (
 	id_comanda,
 	produto_id__comanda,
 	valor_total_comanda
 )
-VALUES (1,2,00.00);
+*/
