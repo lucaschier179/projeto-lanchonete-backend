@@ -8,4 +8,3 @@ async function deletaRegistro() {
   console.log("Deletado com sucesso!!!")
 }
 
-deletaRegistro()

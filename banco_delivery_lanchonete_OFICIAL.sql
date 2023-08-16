@@ -48,51 +48,51 @@ CREATE TABLE IF NOT EXISTS comanda (
 	FOREIGN KEY (produto_id__comanda) REFERENCES cardapio(id_cardapio)
 );
 
-INSERT INTO cadastro_cliente (
-	id_cliente,
-	nome_cliente,
-	email_cliente,
-	senha_cliente,
-	cpf_cliente,
-	endereco_cliente,
-	idade_cliente
-);
+-- INSERT INTO cadastro_cliente (
+-- 	id_cliente,
+-- 	nome_cliente,
+-- 	email_cliente,
+-- 	senha_cliente,
+-- 	cpf_cliente,
+-- 	endereco_cliente,
+-- 	idade_cliente
+-- );
 
-INSERT INTO cadastro_colaborador (
-	id_colaborador,
-	nome_colaborador,
-	email_colaborador,
-	senha_colaborador,
-	cpf_colaborador,
-	endereco_colaborador,
-	idade_colaborador
-);
+-- INSERT INTO cadastro_colaborador (
+-- 	id_colaborador,
+-- 	nome_colaborador,
+-- 	email_colaborador,
+-- 	senha_colaborador,
+-- 	cpf_colaborador,
+-- 	endereco_colaborador,
+-- 	idade_colaborador
+-- );
 
-INSERT INTO produto (
-	id_produto,
-	nome_produto,
-	tipo_produto,
-	quantidade_produto,
-	validade_produto,
-	codigo_barra_produto
-);
+-- INSERT INTO produto (
+-- 	id_produto,
+-- 	nome_produto,
+-- 	tipo_produto,
+-- 	quantidade_produto,
+-- 	validade_produto,
+-- 	codigo_barra_produto
+-- );
 
-INSERT INTO estoque (
-	id_estoque,
-	produto_id_estoque,
-	quantidade_estoque
-);
+-- INSERT INTO estoque (
+-- 	id_estoque,
+-- 	produto_id_estoque,
+-- 	quantidade_estoque
+-- );
 
-INSERT INTO cardapio (
-	id_cardapio,
-	produto_id_cardapio,
-	valor_produto_cardapio
-);
+-- INSERT INTO cardapio (
+-- 	id_cardapio,
+-- 	produto_id_cardapio,
+-- 	valor_produto_cardapio
+-- );
 
-INSERT INTO comanda (
-	id_comanda,
-	produto_id__comanda,
-	valor_total_comanda
-);
+-- INSERT INTO comanda (
+-- 	id_comanda,
+-- 	produto_id__comanda,
+-- 	valor_total_comanda
+-- );
 
-SELECT * FROM cadastro_cliente
+-- SELECT * FROM cadastro_cliente
