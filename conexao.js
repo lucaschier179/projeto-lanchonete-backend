@@ -9,4 +9,3 @@ const client = new pg.Client({
 })
 
 module.exports = client
-//console.log(client)
