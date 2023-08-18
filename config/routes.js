@@ -8,9 +8,8 @@ routes.get('/', function (req, res) {
 })
 
 routes.post('/api/cadastrarcliente', function (req, res) {
-    resposta = BancoInserir.CadastarCliente(req.body.nome,req.body.email,req.body.senha,req.body.cpf,req.body.endereco,req.body.idade)
-    res.send(resposta)
-  
+  BancoInserir.CadastarCliente(req.body.nome,req.body.email,req.body.senha,req.body.cpf,req.body.endereco,req.body.idade)
+  res.send("ok")
 })  
 
 routes.get('/informacoes', function (req, res) {
