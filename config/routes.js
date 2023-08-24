@@ -2,6 +2,7 @@ const express = require('express')
 const routes = express.Router()
 const path = require('path')
 const BancoInserir = require("../insert")
+const BancoDeletar = require("../delete")
 
 routes.get('/', function (req, res) {
   res.send('Seja Bem Vindo')
@@ -9,7 +10,24 @@ routes.get('/', function (req, res) {
 
 routes.post('/api/cadastrarcliente', function (req, res) {
   BancoInserir.CadastarCliente(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.idade)
-  res.send("ok")
+    .then((Resposta) => {
+      res.send(Resposta)
+    })
+    .catch((error) => {
+      res.send(error)
+    })
+
+})
+routes.delete('/api/deletarcadastro', function (req, res) {
+  console.log(req.body.id_cliente)
+  BancoDeletar.RemoveCliente(req.body.id_cliente)
+    .then((Resposta) => {
+      res.send(Resposta)
+    })
+    .catch((error) => {
+      res.send(error)
+    })
+
 })
 
 /*
@@ -18,7 +36,7 @@ routes.get('/informacoes', function (req, res) {
 */
 
 routes.post('/cadastro-cliente', function (req, res) {
-  BancoInserir.CadastarCliente(req.body.nome_cliente, req.body.email_cliente, req.body.senha_cliente, req.body.cpf_cliente, req.body.endereco_cliente, req.body.endereco_cliente)
+  BancoInserir.CadastarCliente(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.endereco)
     .then(() => {
       res.send("Cliente cadastrado com sucesso!")
     })

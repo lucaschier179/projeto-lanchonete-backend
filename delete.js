@@ -1,10 +1,19 @@
 const db = require("./conexao")
 
-async function deletaRegistro() {
+const RemoveCliente =  async function DeletaRegistro(ID_Cliente) {
   await db.connect()
-  const excluir = "DELETE FROM cadastro_cliente WHERE id_cliente=1"
-  await db.query(excluir)
-  await db.end()
-  console.log("Deletado com sucesso!!!")
+  resultado = await db.query("SELECT * FROM cadastro_cliente WHERE id_cliente= " + ID_Cliente)
+  if (resultado.rowCount > 0){
+    console.log("bbbbbbbbbbb")
+    await db.query("DELETE FROM cadastro_cliente WHERE id_cliente= " + ID_Cliente)
+    
+    return "ID: " + ID_Cliente + " excluido com sucesso!"
+  }
+  else{
+    console.log("aaaaaaaaaaa")
+    return "ID: " + ID_Cliente + " não existe!"
+  }
+  
 }
 
+module.exports = {RemoveCliente}
