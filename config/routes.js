@@ -39,9 +39,10 @@ routes.delete('/api/deletarcadastro', function (req, res) {
 
 })
 
-/*
-routes.get('/informacoes', function (req, res) {
-  res.sendFile(path.join(__dirname + '/../index.html'))
-*/
+
+routes.get('/cadastrocliente', function (req, res) {
+  res.sendFile(path.join(__dirname + '/../cadastro_cliente.html'))
+})
+
 
 module.exports = routes
