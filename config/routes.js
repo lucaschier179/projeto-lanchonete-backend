@@ -9,6 +9,15 @@ routes.get('/', function (req, res) {
 })
 
 routes.post('/api/cadastrarcliente', function (req, res) {
+  Cadastro={
+    "nome": req.body.nome,
+    "email": req.body.email,
+    "senha": req.body.senha,
+    "cpf": req.body.cpf,
+    "endereco": req.body.endereco,
+    "idade": req.body.idade
+
+  }
   BancoInserir.CadastarCliente(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.idade)
     .then((Resposta) => {
       res.send(Resposta)
@@ -34,15 +43,5 @@ routes.delete('/api/deletarcadastro', function (req, res) {
 routes.get('/informacoes', function (req, res) {
   res.sendFile(path.join(__dirname + '/../index.html'))
 */
-
-routes.post('/cadastro-cliente', function (req, res) {
-  BancoInserir.CadastarCliente(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.endereco)
-    .then(() => {
-      res.send("Cliente cadastrado com sucesso!")
-    })
-    .catch((error) => {
-      res.send("Erro")
-    })
-})
 
 module.exports = routes
