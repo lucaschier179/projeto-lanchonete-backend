@@ -1,0 +1,35 @@
+.h1-cadastro{
+    display: flex;
+    justify-content: center;
+    color: rgb(100, 173, 173);
+    margin-bottom: 3rem;
+}
+
+form{
+    display: flex; 
+    flex-direction: column; 
+    height: 70vh; 
+    width: 40%; 
+    margin: auto; 
+    gap: 5px; 
+    background: #354055; 
+    border-radius: 25px; 
+    align-items: center; 
+    justify-content: center; 
+    color: aliceblue;
+}
+
+label{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    /* margin-right: 18rem; */
+}
+
+.input-text{
+    color: #354055;
+    border: none;
+    border-radius: 4px;
+    height: 20px;
+    width: 60%;
+}

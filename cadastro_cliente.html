@@ -4,34 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastrar Cliente</title>
+  <link rel="stylesheet" type="text/css" href="./css/cadastro_cliente.css" media="screen" />
+ 
 </head>
 
 <body>
+  <h1 class="h1-cadastro">Cadastrar Cliente</h1>
   <main>
-    <form action="/api/cadastrarcliente" method="post"
-      style="display: flex; flex-direction: column; height: 95vh; width: 50%; margin: auto; gap: 5px; background: #354055; border-radius: 25px; align-items: center; justify-content: center; color: aliceblue;">
+    <form action="/api/cadastrarcliente" method="post">
       <label for="nome">Nome</label>
-      <input type="text" name="nome" id="nome" required>
-
+      <input type="text" name="nome" class="input-text" required>
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
+      <input type="email" name="email" class="input-text" required>
 
       <label for="senha">Senha</label>
-      <input type="password" name="senha" id="senha" required>
+      <input type="password" name="senha" class="input-text" required>
 
       <label for="cpf">CPF</label>
-      <input type="text" name="cpf" id="cpf" required>
+      <input type="text" name="cpf" class="input-text" required>
 
       <label for="endereco">Endereço</label>
-      <input type="text" name="endereco" id="endereco" required>
+      <input type="text" name="endereco" class="input-text" required>
 
       <label for="idade">Idade</label>
-      <input type="number" name="idade" id="idade" required>
+      <input type="number" name="idade" class="input-text" required>
 
       <input type="submit" value="Cadastrar">
     </form>
-
+  </form>
   </main>
 </body>
 
