@@ -12,24 +12,27 @@
   <h1 class="h1-cadastro">Cadastrar Cliente</h1>
   <main>
     <form action="/api/cadastrarcliente" method="post">
-      <label for="nome">Nome</label>
+      <div class="div-conteudo">
+      <label for="nome">Nome:</label>
       <input type="text" name="nome" class="input-text" required>
-      <label for="email">Email</label>
+      <label for="email">Email:</label>
       <input type="email" name="email" class="input-text" required>
 
-      <label for="senha">Senha</label>
+      <label for="senha">Senha:</label>
       <input type="password" name="senha" class="input-text" required>
 
-      <label for="cpf">CPF</label>
+      <label for="cpf">CPF:</label>
       <input type="text" name="cpf" class="input-text" required>
 
-      <label for="endereco">Endereço</label>
+      <label for="endereco">Endereço:</label>
       <input type="text" name="endereco" class="input-text" required>
 
-      <label for="idade">Idade</label>
+      <label for="idade">Idade:</label>
       <input type="number" name="idade" class="input-text" required>
-
-      <input type="submit" value="Cadastrar">
+      <div class="div-button"> 
+      <input class=button-submit type="submit" value="Cadastrar">
+      </div>
+    </div>
     </form>
   </form>
   </main>
