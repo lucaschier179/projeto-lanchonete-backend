@@ -1,6 +1,6 @@
-const db = require("./conexao")
+const db = require("../../config/conexao_banco_de_dados")
 
-async function listar(){
+async function listar() {
   await db.connect()
   resultado = await db.query("SELECT * FROM cadastro_cliente")
   console.log(resultado.rows)
