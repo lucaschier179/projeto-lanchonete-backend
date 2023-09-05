@@ -3,7 +3,8 @@ const db = require("../../config/conexao_banco_de_dados")
 const CadastarCliente = async function inserirDados(Nome, Email, Senha, CPF, Endereco, Idade) {
   console.log(Nome, Email, Senha, CPF, Endereco, Idade)
   await db.connect()
-  Cadastro_Existe = db.query("SELECT cpf_cliente FROM cadastro_cliente where cpf_cliente = " + CPF)
+  Cadastro_Existe = await db.query("SELECT cpf_cliente FROM cadastro_cliente where cpf_cliente = " + CPF)
+  console.log(Cadastro_Existe)
   if(!Cadastro_Existe)
     try {
       const novoCliente = `INSERT INTO cadastro_cliente 
