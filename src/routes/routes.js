@@ -13,14 +13,6 @@ routes.get('/cadastrocliente', function (req, res) {
 })
 
 routes.post('/api/cadastrarcliente', function (req, res) {
-  Cadastro = {
-    "nome": req.body.nome,
-    "email": req.body.email,
-    "senha": req.body.senha,
-    "cpf": req.body.cpf,
-    "endereco": req.body.endereco,
-    "idade": req.body.idade
-  }
   BancoInserir.CadastarCliente(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.idade)
     .then((Resposta) => {
       res.send(Resposta)
@@ -31,7 +23,6 @@ routes.post('/api/cadastrarcliente', function (req, res) {
 })
 
 routes.delete('/api/deletarcadastro', function (req, res) {
-  console.log(req.body.id_cliente)
   BancoDeletar.RemoveCliente(req.body.id_cliente)
     .then((Resposta) => {
       res.send(Resposta)
