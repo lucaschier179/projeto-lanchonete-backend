@@ -3,14 +3,14 @@
 }
 
 body {
-  background: #e8e8e8;
+  background: #530791;
 }
 
 .h1-cadastro {
   display: flex;
   justify-content: center;
-  color: #8756A6;
-  margin-bottom: 3rem;
+  color: #DEBC21;
+  margin-bottom: 1rem;
   font-weight: 700;
 }
 
@@ -20,11 +20,12 @@ form {
   height: 500px;
   width: 400px;
   margin: auto;
-  background: #8756A6;
-  border-radius: 25px;
+  background: #DEBC21;
+  border-radius: 10px;
   align-items: center;
   justify-content: center;
-  color: #EAB0F2;
+  color: #530791;
+  padding: 5px;
 }
 
 .input-text {
@@ -38,7 +39,7 @@ form {
 .div-conteudo {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .div-button {
@@ -54,12 +55,12 @@ form {
   width: 120px;
   height: 30px;
   transition: 0.6s;
-  background-color: #11c91a;
+  background-color: #219100;
   font-size: 16px;
   font-weight: 700;
   color: #e8e8e8;
 }
 
 .button-submit:hover {
-  background-color: #0C9613;
+  background-color: #00451A;
 }
