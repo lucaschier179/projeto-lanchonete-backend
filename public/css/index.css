@@ -64,3 +64,35 @@ form {
 .button-submit:hover {
   background-color: #00451A;
 }
+
+.container {
+  color: #DEBC21; 
+  font-size: 80px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container-button {
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  border: none;
+  width: 140px;
+  height: auto;
+  transition: 0.25s;
+  background-color: #219100;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e8e8e8;
+  text-align: center;
+  text-decoration: none;
+  margin-top: -50px;
+}
+
+.container-button:hover {
+  background-color: #00451A;
+}
