@@ -6,13 +6,20 @@
 
 body {
   background: #530791;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .h1-cadastro {
   display: flex;
   justify-content: center;
   color: #DEBC21;
-  margin-bottom: 1rem;
   margin-top: 1rem;
   font-weight: 700;
 }
