@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../public/css/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h1 class="h1-cadastro">Cadastrar Cliente</h1>
+  <h1 class="h1-cadastro">
+    Cadastrar Cliente
+  </h1>
   <main>
     <form action="/api/cadastrarcliente" method="post">
       <div class="div-conteudo">
         <label for="nome">
           Nome:
         </label>
-        <input type="text" name="nome" class="input-text" required placeholder=" Insira nome">
+        <input type="text" name="nome" class="input-text" required placeholder=" Digite o seu nome completo...">
         <label for="email">
           Email:
         </label>
-        <input type="email" name="email" class="input-text" required placeholder=" Insira email">
+        <input type="email" name="email" class="input-text" required placeholder=" Digite o seu email...">
         <label for="senha">
           Senha:
         </label>
-        <input type="password" name="senha" class="input-text" required placeholder=" Insira senha">
+        <input type="password" name="senha" class="input-text" required placeholder=" Digite a sua senha...">
         <label for="cpf">
           CPF:
         </label>
-        <input type="text" name="cpf" class="input-text" required placeholder=" Insira CPF">
+        <input type="text" name="cpf" class="input-text" required placeholder=" Digite o seu CPF... (somente números)">
         <label for="endereco">
           Endereço:
         </label>
-        <input type="text" name="endereco" class="input-text" required placeholder=" Insira endereço">
+        <input type="text" name="endereco" class="input-text" required placeholder=" Digite o seu endereço completo...">
         <label for="idade">
           Idade:
         </label>
-        <input type="number" name="idade" class="input-text" required placeholder=" Insira idade">
+        <input type="number" min="18" max="130" name="idade" class="input-text" required
+          placeholder=" Digite a sua idade...">
         <div class="div-button">
           <input class=button-submit type="submit" value="Cadastrar">
         </div>

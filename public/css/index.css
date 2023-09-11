@@ -1,4 +1,6 @@
 * {
+  margin: 0;
+  padding: 0;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -11,21 +13,21 @@ body {
   justify-content: center;
   color: #DEBC21;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   font-weight: 700;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 400px;
+  height: 470px;
+  width: 340px;
   margin: auto;
   background: #DEBC21;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
   color: #530791;
-  padding: 5px;
 }
 
 .input-text {
@@ -67,30 +69,39 @@ form {
 
 .container {
   color: #DEBC21; 
-  font-size: 80px;
+  font-size: 5rem;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+  gap: 1rem;
+}
+
+.text_p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-button {
   border-radius: 4px;
-  padding: 4px;
   cursor: pointer;
   border: none;
-  width: 140px;
-  height: auto;
-  transition: 0.25s;
+  width: 15rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
   background-color: #219100;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #e8e8e8;
   text-align: center;
   text-decoration: none;
-  margin-top: -50px;
 }
 
 .container-button:hover {
