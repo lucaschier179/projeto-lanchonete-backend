@@ -111,6 +111,14 @@ form {
   text-decoration: none;
 }
 
+.div-button-home {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+}
+
 .container-button:hover {
   background-color: #00451A;
 }
