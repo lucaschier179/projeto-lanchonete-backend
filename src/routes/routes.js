@@ -1,6 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 const path = require('path')
+const BancoConsulta = require("../controllers/consulta_banco")
 const BancoInserir = require("../controllers/insert")
 const BancoDeletar = require("../controllers/delete")
 
@@ -10,6 +11,26 @@ routes.get('/', function (req, res) {
 
 routes.get('/cadastrocliente', function (req, res) {
   res.sendFile(path.join(__dirname + '/../views/cadastro_cliente.html'))
+})
+
+routes.get("/api/obter_clientes_cadastrados", function (req, res) {
+  BancoConsulta.ConsultaCliente()
+  .then((Resposta) => {
+    res.send(Resposta)
+  })
+  .catch((error) => {
+    res.send(error)
+  })
+})
+
+routes.get("/api/obter_colaborador_cadastrados", function (req, res) {
+  BancoConsulta.ConsultaColaborador()
+  .then((Resposta) => {
+    res.send(Resposta)
+  })
+  .catch((error) => {
+    res.send(error)
+  })
 })
 
 routes.post('/api/cadastrarcliente', function (req, res) {
@@ -22,8 +43,19 @@ routes.post('/api/cadastrarcliente', function (req, res) {
     })
 })
 
-routes.delete('/api/deletarcadastro', function (req, res) {
-  BancoDeletar.RemoveCliente(req.body.id_cliente)
+
+routes.post('/api/cadastrarcolaborador', function (req, res) {
+  BancoInserir.CadastarColaborador(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.idade)
+    .then((Resposta) => {
+      res.send(Resposta)
+    })
+    .catch((error) => {
+      res.send(error)
+    })
+})
+
+routes.delete('/api/deletarcadastro/:id_cliente', function (req, res) {
+  BancoDeletar.RemoveCliente(req.params.id_cliente)
     .then((Resposta) => {
       res.send(Resposta)
     })
