@@ -2,7 +2,7 @@ const db = require("../../config/conexao_banco_de_dados")
 
 const CadastarCliente = async function inserirDadosCliente(Nome, Email, Senha, CPF, Endereco, Idade) {
   await db.connect()
-  Cadastro_Existe = await db.query("SELECT * FROM cadastro_cliente WHERE cpf_cliente=$1", [CPF])
+  Cadastro_Existe = await db.query("SELECT * FROM cadastro_cliente WHERE cpf_cliente=$1 or email_cliente=$2", [CPF,Email])
   if (Cadastro_Existe.rowCount <= 0)
     try {
       const novoCliente = `INSERT INTO cadastro_cliente 
@@ -20,7 +20,7 @@ const CadastarCliente = async function inserirDadosCliente(Nome, Email, Senha, C
 }
 const CadastarColaborador = async function inserirDadosColaborador(Nome, Email, Senha, CPF, Endereco, Idade) {
   await db.connect()
-  Cadastro_Existe = await db.query("SELECT * FROM cadastro_colaborador WHERE cpf_colaborador=$1", [CPF])
+  Cadastro_Existe = await db.query("SELECT * FROM cadastro_colaborador WHERE cpf_colaborador=$1 or email_colaborador=$2", [CPF,Email])
   if (Cadastro_Existe.rowCount <= 0)
     try {
       const novoColaborador = `INSERT INTO cadastro_colaborador 

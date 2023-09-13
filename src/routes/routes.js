@@ -17,7 +17,7 @@ routes.get("/cadastroColaborador", function (req, res) {
   res.sendFile(path.join(__dirname + "/../views/cadastro_colaborador.html"))
 })
 
-routes.get("/api/obterClientesCadastrados", function (req, res) {
+routes.get("/api/obterCadastrados", function (req, res) {
   BancoConsulta.ConsultaCliente()
     .then((Resposta) => {
       res.send(Resposta)
@@ -66,6 +66,17 @@ routes.delete("/api/deletarCliente/:id_cliente", function (req, res) {
       res.send(error)
     })
 })
+
+routes.post("/api/login/:tabela", function (req, res) {
+  BancoConsulta.Login(req.params.tabela, req.body.coluna_a, req.body.email, req.body.coluna_b, req.body.senha)
+    .then((Resposta) => {
+      res.send(Resposta)
+    })
+    .catch((error) => {
+      res.send(error)
+    })
+})
+
 
 routes.delete("/api/deletarColaborador/:id_colaborador", function (req, res) {
   BancoDeletar.RemoveColaborador(req.params.id_colaborador)
