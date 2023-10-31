@@ -5,16 +5,20 @@ const BancoConsulta = require("../controllers/consulta_banco")
 const BancoInserir = require("../controllers/insert")
 const BancoDeletar = require("../controllers/delete")
 
-routes.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/index.html"))
+routes.get('/testeteste', function (req, res) {
+  res.render('./../views/teste.ejs')
 })
 
-routes.get("/cadastroCliente", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/cadastro_cliente.html"))
+routes.get('/', function (req, res) {
+  res.render('./../views/index.ejs')
 })
 
-routes.get("/cadastroColaborador", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/cadastro_colaborador.html"))
+routes.get('/cadastroCliente', function (req, res) {
+  res.render('./../views/cadastro_cliente.ejs')
+})
+
+routes.get('/cadastroColaborador', function (req, res) {
+  res.render('./../views/cadastro_colaborador.ejs')
 })
 
 routes.get("/api/obterCadastrados", function (req, res) {
