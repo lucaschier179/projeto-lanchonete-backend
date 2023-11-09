@@ -13,6 +13,10 @@ routes.get('/', function (req, res) {
   res.render('./../views/index.ejs')
 })
 
+routes.get('/cadastros', function (req, res) {
+  res.render('./../views/cadastros.ejs')
+})
+
 routes.get('/cadastroCliente', function (req, res) {
   res.render('./../views/cadastro_cliente.ejs')
 })
@@ -72,7 +76,7 @@ routes.delete("/api/deletarCliente/:id_cliente", function (req, res) {
 })
 
 routes.post("/api/login/:tabela", function (req, res) {
-  BancoConsulta.Login(req.params.tabela, req.body.coluna_a, req.body.email, req.body.coluna_b, req.body.senha)
+  BancoConsulta.Login(req.params.tabela, req.body.email, req.body.senha)
     .then((Resposta) => {
       res.send(Resposta)
     })

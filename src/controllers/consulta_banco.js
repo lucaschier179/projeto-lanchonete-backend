@@ -22,10 +22,10 @@ const ConsultaColaborador = async function Cadastrados() {
   }
 }
 
-const Login = async function Login_Cadastros(Tabela, Coluna_a, Email, Coluna_b, Senha) {
+const Login = async function Login_Cadastros(Tabela, Email, Senha) {
   try {
     await db.connect()
-    resultados = (await db.query(`SELECT * FROM ${Tabela} WHERE ${Coluna_a}=$1 AND ${Coluna_b}=$2`,[Email,Senha]))
+    resultados = (await db.query(`SELECT * FROM ${Tabela} WHERE email=$1 AND senha=$2`,[Email,Senha]))
     if (resultados.rowCount > 0){
         return 200
     }else{

@@ -10,19 +10,26 @@
 </head>
 
 <body>
-  <div class="container">
-    <p class="text_p">
-      Bem Vindo à Página Inicial!
-    </p>
-    <div class="div-button-home">
-      <a href="/cadastroCliente" class="container-button">
-        Cadastrar Cliente
-      </a>
-      <a href="/cadastroColaborador" class="container-button">
-        Cadastrar Colaborador
-      </a>
-    </div>
-  </div>
+  <main class="box">
+    <h1 class="h1-cadastro">
+      Login
+    </h1>
+    <form action="/api/login/cadastro_cliente" method="post">
+      <div class="div-conteudo">
+        <label for="email">
+          Email:
+        </label>
+        <input type="email" name="email" placeholder=" Digite o seu email..." class="input-text" autocomplete="off" required>
+        <label for="senha">
+          Senha:
+        </label>
+        <input type="password" name="senha" placeholder=" Digite a sua senha..." class="input-text" autocomplete="off" required>
+        <div class="div-button">
+          <input class=button-submit type="submit" value="Entrar">
+        </div>
+      </div>
+    </form>
+  </main>
 </body>
 
 </html>
