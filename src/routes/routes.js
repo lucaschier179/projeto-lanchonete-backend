@@ -26,7 +26,7 @@ routes.get('/cadastroColaborador', function (req, res) {
 })
 
 routes.get("/api/obterCadastrados", function (req, res) {
-  BancoConsulta.ConsultaCliente()
+  BancoConsulta.ConsultaCadastrados()
     .then((Resposta) => {
       res.send(Resposta)
     })
@@ -35,17 +35,7 @@ routes.get("/api/obterCadastrados", function (req, res) {
     })
 })
 
-routes.get("/api/obterColaboradoresCadastrados", function (req, res) {
-  BancoConsulta.ConsultaColaborador()
-    .then((Resposta) => {
-      res.send(Resposta)
-    })
-    .catch((error) => {
-      res.send(error)
-    })
-})
-
-routes.post("/api/cadastrarCliente", function (req, res) {
+routes.post("/api/cadastrar", function (req, res) {
   BancoInserir.CadastarCliente(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.idade)
     .then((Resposta) => {
       res.send(Resposta)
@@ -55,8 +45,8 @@ routes.post("/api/cadastrarCliente", function (req, res) {
     })
 })
 
-routes.post("/api/cadastrarColaborador", function (req, res) {
-  BancoInserir.CadastarColaborador(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.idade)
+routes.delete("/api/deletar/:id_cliente", function (req, res) {
+  BancoDeletar.RemoveCadastrados(req.params.id_cliente)
     .then((Resposta) => {
       res.send(Resposta)
     })
@@ -65,18 +55,8 @@ routes.post("/api/cadastrarColaborador", function (req, res) {
     })
 })
 
-routes.delete("/api/deletarCliente/:id_cliente", function (req, res) {
-  BancoDeletar.RemoveCliente(req.params.id_cliente)
-    .then((Resposta) => {
-      res.send(Resposta)
-    })
-    .catch((error) => {
-      res.send(error)
-    })
-})
-
-routes.post("/api/login/:tabela", function (req, res) {
-  BancoConsulta.Login(req.params.tabela, req.body.email, req.body.senha)
+routes.get("/api/login", function (req, res) {
+  BancoConsulta.Login(req.body.email, req.body.senha)
     .then((Resposta) => {
       res.send(Resposta)
     })

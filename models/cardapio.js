@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize")
 const sequelize = require("../config/conexao_sequelize")
 
-const Cursos = sequelize.define("cursos", {
+const Categorias = sequelize.define("cardapio", {
   categoria_nome: DataTypes.STRING,
 })
 
