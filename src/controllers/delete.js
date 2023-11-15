@@ -1,13 +1,13 @@
 const db = require("../../config/conexao_banco_de_dados")
 
-const RemoveCadastrados = async function DeletaRegistro(ID_Cliente) {
+const RemoverCadastradoPessoa = async function RemoverCadastradoPessoa(Nome_Pessoa) {
   try{
-    await db.query("DELETE FROM cadastrados WHERE id_cliente= $1", [ID_Cliente])
-    return "ID: " + ID_Cliente + " excluído com sucesso!", 200
+    await db.query("DELETE FROM cadastrados WHERE nome= $1", [Nome_Pessoa])
+    return "Usuario: " + Nome_Pessoa + " excluído com sucesso!", 200
   }
   catch{
-      return "ID: " + ID_Cliente + " não existe!", 404
+      return "Usuario: " + Nome_Pessoa + " não cadastro!", 404
   }
 }
 
-module.exports = { RemoveCadastrados}
+module.exports = { RemoverCadastradoPessoa}

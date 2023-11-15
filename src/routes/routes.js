@@ -1,9 +1,9 @@
-const express = require("express")
-const routes = express.Router()
-const path = require("path")
 const BancoConsulta = require("../controllers/consulta_banco")
 const BancoInserir = require("../controllers/insert")
 const BancoDeletar = require("../controllers/delete")
+const express = require("express")
+const path = require("path")
+const routes = express.Router()
 
 routes.get('/testeteste', function (req, res) {
   res.render('./../views/teste.ejs')
@@ -25,28 +25,12 @@ routes.get('/cadastroColaborador', function (req, res) {
   res.render('./../views/cadastro_colaborador.ejs')
 })
 
-routes.get("/api/obterCadastrados", function (req, res) {
+routes.get('*', function(req, res){
+  res.status(404).send('what???');
+});
+
+routes.get("/api/obter-Cadastrados", function (req, res) {
   BancoConsulta.ConsultaCadastrados()
-    .then((Resposta) => {
-      res.send(Resposta)
-    })
-    .catch((error) => {
-      res.send(error)
-    })
-})
-
-routes.post("/api/cadastrar", function (req, res) {
-  BancoInserir.CadastarCliente(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.idade)
-    .then((Resposta) => {
-      res.send(Resposta)
-    })
-    .catch((error) => {
-      res.send(error)
-    })
-})
-
-routes.delete("/api/deletar/:id_cliente", function (req, res) {
-  BancoDeletar.RemoveCadastrados(req.params.id_cliente)
     .then((Resposta) => {
       res.send(Resposta)
     })
@@ -65,9 +49,8 @@ routes.get("/api/login", function (req, res) {
     })
 })
 
-
-routes.delete("/api/deletarColaborador/:id_colaborador", function (req, res) {
-  BancoDeletar.RemoveColaborador(req.params.id_colaborador)
+routes.post("/api/cadastrar-pessoa", function (req, res) {
+  BancoInserir.CadastarPessoa(req.body.nome, req.body.email, req.body.senha, req.body.cpf, req.body.endereco, req.body.idade)
     .then((Resposta) => {
       res.send(Resposta)
     })
@@ -75,6 +58,17 @@ routes.delete("/api/deletarColaborador/:id_colaborador", function (req, res) {
       res.send(error)
     })
 })
+
+routes.delete("/api/remover-cadastro-pessoa/:nome", function (req, res) {
+  BancoDeletar.RemoverCadastradoPessoa(req.params.nome)
+    .then((Resposta) => {
+      res.sendStatus(Resposta)
+    })
+    .catch((error) => {
+      res.sendStatus(error)
+    })
+})
+
 
 //  CRUD - Básico - Aula 31/08/2023
 /*
