@@ -11,24 +11,42 @@
 
 <body>
   <main class="box">
-    <h1 class="h1-cadastro">
-      Login
-    </h1>
-    <form action="/api/login/cadastro_cliente" method="post">
-      <div class="div-conteudo">
-        <label for="email">
-          Email:
-        </label>
-        <input type="email" name="email" placeholder=" Digite o seu email..." class="input-text" autocomplete="off" required>
-        <label for="senha">
-          Senha:
-        </label>
-        <input type="password" name="senha" placeholder=" Digite a sua senha..." class="input-text" autocomplete="off" required>
-        <div class="div-button">
-          <input class=button-submit type="submit" value="Entrar">
+    <div class="navbar-login">
+      <img src="../../public/images/logo_prato_rapido.png" alt="Logo - Prato Rápido" class="logo">
+    </div>
+    <div class="container-home">
+      <form action="/api/login" method="post" class="formulario">
+        <div class="div-text">
+          <h2 class="frase">
+            Falta
+            <span class="text-destaque">
+              pouco
+            </span>
+            para matar a sua
+            <span class="text-destaque">
+              fome<span style="color: #F8EAE5;">!</span>
+            </span>
+          </h2>
         </div>
-      </div>
-    </form>
+        <div class="div-login">
+          <h1 class="h1-cadastro">
+            Login
+          </h1>
+          <div class="div-inputs">
+            <input type="email" name="email" placeholder=" Email..." class="input-text" autocomplete="off" required>
+            <input type="password" name="senha" placeholder=" Senha..." class="input-text" autocomplete="off" required>
+            <div class="div-button">
+              <input class=button-submit type="submit" value="Entrar">
+            </div>
+            <div>
+              <a style="color: #E25700;" href="/cadastroCliente">
+                Não possui conta?
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </main>
 </body>
 
