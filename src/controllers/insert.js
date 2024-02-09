@@ -2,7 +2,7 @@ const db = require("../../config/conexao_banco_de_dados")
 
 const CadastarPessoa = async function CadastarPessoa(Nome, Email, Senha, CPF, Endereco, Idade) {
   await db.connect()
-  CadastradoExiste = await db.query("SELECT * FROM cadastrados WHERE cpf=$1 or email=$2", [CPF,Email])
+  CadastradoExiste = await db.query("SELECT * FROM cadastrados WHERE cpf=$1", [CPF])
   if (CadastradoExiste.rowCount <= 0)
     try {
       const NovoCliente = `INSERT INTO cadastrados 
@@ -15,7 +15,7 @@ const CadastarPessoa = async function CadastarPessoa(Nome, Email, Senha, CPF, En
       return "Erro ao cadastrar", 500
     }
   else {
-    return "Usuario já cadastrado!", 409
+    return "CPF já cadastrado! Por favor insira outro CPF..."
   }
 }
 

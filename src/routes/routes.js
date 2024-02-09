@@ -29,8 +29,8 @@ routes.get('/cadastroColaborador', function (req, res) {
   res.render('./../views/cadastro_colaborador.ejs')
 })
 
-routes.get('*', function(req, res){
-  res.status(404).send('what???');
+routes.get('*', function (req, res) {
+  res.status(404).render('./../views/404.ejs');
 });
 
 routes.get("/api/obter-Cadastrados", function (req, res) {
@@ -46,9 +46,11 @@ routes.get("/api/obter-Cadastrados", function (req, res) {
 routes.get("/api/login", function (req, res) {
   BancoConsulta.Login(req.body.email, req.body.senha)
     .then((Resposta) => {
-      res.send('./../views/home.ejs')
+      console.log(Resposta)
+      res.render('./../views/home.ejs')
     })
     .catch((error) => {
+      console.log(error)
       res.send(error)
     })
 })
