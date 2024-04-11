@@ -5,6 +5,12 @@ import BancoInserir from "../controllers/insert";
 
 const routes = express.Router()
 
+
+routes.use(function (req: Request, res: Response) {
+  res.status(404).render('./../views/404.ejs');
+});
+
+
 routes.get('/testeteste', function (req: Request, res: Response) {
   res.render('./../views/teste.ejs')
 })
@@ -29,9 +35,6 @@ routes.get('/cadastroColaborador', function (req: Request, res: Response) {
   res.render('./../views/cadastro_colaborador.ejs')
 })
 
-// routes.get('*', function (req: Request, res: Response) {
-//   res.status(404).render('./../views/404.ejs');
-// });
 
 routes.get("/api/obter-Cadastrados", function (req: Request, res: Response) {
   BancoConsulta.ConsultaCadastrados()
