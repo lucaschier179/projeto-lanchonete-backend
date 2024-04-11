@@ -1,4 +1,4 @@
-const db = require("../../config/conexao_banco_de_dados")
+import db from "../../config/conexao_banco_de_dados";
 
 async function alterarRegistro() {
   await db.connect()
