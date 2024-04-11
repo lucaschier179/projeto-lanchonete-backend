@@ -6,11 +6,6 @@ import BancoInserir from "../controllers/insert";
 const routes = express.Router()
 
 
-routes.use(function (req: Request, res: Response) {
-  res.status(404).render('./../views/404.ejs');
-});
-
-
 routes.get('/testeteste', function (req: Request, res: Response) {
   res.render('./../views/teste.ejs')
 })
@@ -77,5 +72,11 @@ routes.delete("/api/remover-cadastro-pessoa/:nome", function (req: any, res: any
       res.sendStatus(error)
     })
 })
+
+
+routes.all('*', function (req: Request, res: Response) {
+  res.status(404).render('./../views/404.ejs');
+});
+
 
 export default routes
