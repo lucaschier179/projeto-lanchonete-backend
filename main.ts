@@ -1,7 +1,8 @@
 import routeProducts from './src/modules/products/controllers/product.controller';
+import routeOrder from './src/modules/order/controllers/order.controller';
 import {Duplicate} from "./src/infrastructure/expectations/duplicate"
 import {NotFound} from "./src/infrastructure/expectations/notFound"
-import route from './src/modules/users/controllers/userController';
+import route from './src/modules/users/controllers/user.controller';
 import { Request, Response, NextFunction } from 'express';
 import express from 'express';
 import ip from 'ip';
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(route);
 app.use(routeProducts);
+app.use(routeOrder);
 
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
