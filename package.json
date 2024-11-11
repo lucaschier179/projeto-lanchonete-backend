@@ -4,9 +4,9 @@
   "description": "",
   "main": "index",
   "scripts": {
-    "start": "nodemon index.ts",
-    "dev": "nodemon --exec ts-node index.ts",
-    "build": "rm -rf index.ts && tsc"
+    "start": "nodemon main.ts",
+    "dev": "nodemon --exec ts-node main.ts",
+    "build": "rm -rf main.ts && tsc"
   },
   "author": "",
   "license": "ISC",
